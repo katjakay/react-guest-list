@@ -5,6 +5,7 @@ export function GuestListForm() {
 
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+
   const [guests, setGuests] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
