@@ -56,7 +56,7 @@ export function GuestListForm() {
     fetchGuests().catch(() => console.log('Deleting guest failed!'));
   }
 
-  // guest attendance
+  // Change guest attendance
   async function changeAttendanceStatus(id, value) {
     const response = await fetch(`${baseUrl}/guests/${id}`, {
       method: 'PUT',
@@ -109,7 +109,7 @@ export function GuestListForm() {
 
         {isLoading && <h1>Loading...</h1>}
         {!isLoading && guests.length === 0 ? (
-          <div>Add guests to the list!</div>
+          <div>New guests, add here:</div>
         ) : (
           <div>
             <h2>Overview guest list</h2>
