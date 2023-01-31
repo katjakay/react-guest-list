@@ -80,18 +80,20 @@ export function GuestListForm() {
         <div>
           <div>
             <form onSubmit={addNewGuest}>
-              <label htmlFor="first name">
-                First name
+              <label htmlFor="First name">
+                First name:
                 <input
+                  name="First name"
                   value={firstName}
                   onChange={(event) => setFirstName(event.currentTarget.value)}
                   disabled={isLoading}
                 />
               </label>
               <br />
-              <label htmlFor="last name">
-                Last name
+              <label htmlFor="Last name">
+                Last name:
                 <input
+                  name="Last name"
                   value={lastName}
                   onChange={(event) => setLastName(event.currentTarget.value)}
                   disabled={isLoading}
