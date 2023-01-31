@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 
 export function GuestListForm() {
-  const baseUrl = 'http://localhost:4000';
+  const baseUrl =
+    'https://express-guest-list-api-memory-data-store.katjakay.repl.co';
 
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -101,7 +102,7 @@ export function GuestListForm() {
               </label>
               <br />
               <div>
-                <button onClick={addNewGuest} disabled={isLoading}>
+                <button hidden onClick={addNewGuest} disabled={isLoading}>
                   Submit
                 </button>
               </div>
@@ -111,7 +112,7 @@ export function GuestListForm() {
 
         {isLoading && <h1>Loading...</h1>}
         {!isLoading && guests.length === 0 ? (
-          <div>New guests, add here:</div>
+          <div>No guests are currently attending</div>
         ) : (
           <div>
             <h2>Overview guest list</h2>
@@ -136,6 +137,7 @@ export function GuestListForm() {
                       />
                       {guest.attending === true ? 'attending' : 'not attending'}
                     </label>
+                    <br />
                     <button
                       aria-label={`Remove ${guest.firstName} ${guest.lastName}`}
                       onClick={() => {
